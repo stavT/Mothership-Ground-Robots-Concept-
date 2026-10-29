@@ -25,12 +25,12 @@ Red disks are propeller keep-out volumes. The blades under them are the real pro
 
 | Flight | Cutaway |
 | --- | --- |
-| [![Flight](quiver-rover-pod/previews/flight_iso.png)](quiver-rover-pod/GLB/flight.glb) | [![Cutaway](quiver-rover-pod/previews/cutaway_iso.png)](quiver-rover-pod/GLB/cutaway.glb) |
+| [![Flight](quiver-rover-pod/previews/flight_iso.png)](quiver-rover-pod/GLB/flight.glb) | [![Cutaway](quiver-rover-pod/previews/cutaway-quiver.png)](quiver-rover-pod/GLB/cutaway.glb) |
 | Closed pod on the belly. | Robots, chute bay, and structure. |
 
 | Separated | Descent |
 | --- | --- |
-| [![Separated](quiver-rover-pod/previews/separated_iso.png)](quiver-rover-pod/GLB/separated.glb) | [![Descent](quiver-rover-pod/previews/descent_iso.png)](quiver-rover-pod/GLB/descent.glb) |
+| [![Separated](quiver-rover-pod/previews/separated-quiver.png)](quiver-rover-pod/GLB/separated.glb) | [![Descent](quiver-rover-pod/previews/descent_iso.png)](quiver-rover-pod/GLB/descent.glb) |
 | Pod clear of the drone. Canopy still packed. The gap is illustrative. | Canopy is a drawing, not a descent calculation. |
 
 | On the ground | Empty carrier |
