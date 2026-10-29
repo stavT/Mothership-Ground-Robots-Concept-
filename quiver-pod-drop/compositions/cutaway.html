@@ -1,0 +1,73 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+      overflow: hidden;
+    }
+    #cutaway-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #cutaway-photo {
+      position: absolute;
+      width: 2100px;
+      height: 1400px;
+      left: -90px;
+      top: -80px;
+    }
+    #cutaway-line {
+      position: absolute;
+      left: 96px;
+      top: 900px;
+      z-index: 2;
+    }
+    #cutaway-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 64px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+  </style>
+  <div data-hf-id="hf-gew7" id="root" data-composition-id="cutaway" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-khjj"
+      id="cutaway-shot"
+      class="clip"
+      data-start="0"
+      data-duration="3.8"
+      data-track-index="0"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-nupw" id="cutaway-stage">
+        <img data-hf-id="hf-9auv" id="cutaway-photo" src="assets/stills/cutaway.png" alt="Cutaway of both rovers inside the pod" />
+      </div>
+    </div>
+    <div data-hf-id="hf-uada" id="cutaway-line" class="clip" data-start="0.55" data-duration="2.55" data-track-index="1">
+      <span data-hf-id="hf-pk3v" id="cutaway-words">Side by side</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#cutaway-photo", { transformOrigin: "50% 68%" }, 0);
+    tl.fromTo(
+      "#cutaway-photo",
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 12, scale: 1.05, duration: 2.6, ease: "power2.inOut" },
+      0.35,
+    );
+    tl.fromTo(
+      "#cutaway-words",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      0.55,
+    );
+    tl.to("#cutaway-words", { opacity: 0, filter: "blur(6px)", duration: 0.16, ease: "power2.in" }, 2.8);
+    window.__timelines["cutaway"] = tl;
+  </script>
+</template>

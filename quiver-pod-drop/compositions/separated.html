@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+      overflow: hidden;
+    }
+    #separated-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #separated-photo {
+      position: absolute;
+      width: 1680px;
+      height: 1120px;
+      left: 120px;
+      top: -20px;
+    }
+    #separated-mover {
+      position: absolute;
+      inset: 0;
+    }
+    #separated-line {
+      position: absolute;
+      left: 192px;
+      top: 470px;
+      z-index: 2;
+    }
+    #separated-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+  </style>
+  <div data-hf-id="hf-5gpi" id="root" data-composition-id="separated" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-6532"
+      id="separated-shot"
+      class="clip"
+      data-start="0"
+      data-duration="3.8"
+      data-track-index="0"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-pyu7" id="separated-stage">
+        <div data-hf-id="hf-0fcu" id="separated-mover">
+          <img data-hf-id="hf-9eb6"
+            id="separated-photo"
+            src="assets/stills/separated.png"
+            alt="Pod released under the aircraft, parachute still packed"
+          />
+        </div>
+      </div>
+    </div>
+    <div data-hf-id="hf-rlwk" id="separated-line" class="clip" data-start="0.42" data-duration="2.7" data-track-index="1">
+      <span data-hf-id="hf-gxhl" id="separated-words">Pod leaves the belly</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#separated-mover", { transformOrigin: "50% 42%" }, 0);
+    tl.fromTo(
+      "#separated-mover",
+      { x: 0, y: -110, scale: 1 },
+      { x: 0, y: 0, scale: 1, duration: 0.32, ease: "power4.out" },
+      0,
+    );
+    tl.fromTo(
+      "#separated-mover",
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 28, scale: 1.03, duration: 2.8, ease: "power2.inOut" },
+      0.45,
+    );
+    tl.fromTo(
+      "#separated-words",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      0.42,
+    );
+    tl.to(
+      "#separated-words",
+      { opacity: 0, filter: "blur(6px)", duration: 0.16, ease: "power2.in" },
+      2.82,
+    );
+    window.__timelines["separated"] = tl;
+  </script>
+</template>

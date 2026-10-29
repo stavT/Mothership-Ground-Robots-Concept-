@@ -1,0 +1,25 @@
+.DS_Store
+**/.DS_Store
+**/__pycache__/
+*.pyc
+
+# Local caches and the Blender render environment
+quiver-pod-drop/.venv-bpy/
+quiver-pod-drop/.hf-state/
+quiver-pod-drop/.hyperframes/
+quiver-pod-drop/.thumbnails/
+quiver-pod-drop/.media/
+quiver-pod-drop/.waveform-cache/
+quiver-rover-pod/tmp/
+
+# Nested clone metadata. The source files are tracked; this folder is not.
+quiver-rover-pod/vendor/project-quiver/.git/
+
+# Over GitHub's 100 MB file limit. Rebuild with cadgen run src/exports.py
+quiver-rover-pod/STEP/flight_rigid.step
+quiver-rover-pod/XBF/flight.xbf
+quiver-rover-pod/XBF/flight_rigid.xbf
+quiver-rover-pod/XBF/cutaway.xbf
+quiver-rover-pod/XBF/exploded.xbf
+quiver-rover-pod/XBF/separated.xbf
+quiver-rover-pod/XBF/empty_carrier.xbf

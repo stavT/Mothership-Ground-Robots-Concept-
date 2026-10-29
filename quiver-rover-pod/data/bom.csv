@@ -1,0 +1,8 @@
+part,qty,source,role
+aircraft reference,1,"Arrow-air/project-quiver assembly, commit 65f46e3, CERN-OHL-S",official geometry
+2112 attach plate,3,included in the Quiver assembly,official geometry
+adapter saddle and pins,1,new concept,custom
+UGV Rover PT PI5 ROS2,2,approximate reference inside the published envelope,reference
+18650 cell form,6,"industry cell size, mass is a placeholder",reference
+transport pod,1,"new concept, PETG solid volume",custom
+parachute display,1,"placeholder, no recovery system selected",visualisation

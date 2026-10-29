@@ -1,0 +1,17 @@
+item,basis,class,mass_kg,where_it_goes
+robot_1_ready,manufacturer kit + placeholder cells,manufacturer+placeholder,2.395,descends
+robot_2_ready,manufacturer kit + placeholder cells,manufacturer+placeholder,2.395,descends
+pod_structure_restraints_doors_skids,"solid PETG volume of the pod, lug, ramp, skids, lugs",estimated from CAD,4.272,descends
+parachute_bag_lines_bridles,"single placeholder, not from canopy volume",placeholder allowance,0.85,descends
+wiring_electronics,not modelled as conductors,placeholder allowance,0.08,descends
+fasteners_unmodelled,four pins are in the adapter row,placeholder allowance,0.05,split
+unallocated,contingency,placeholder allowance,0.2,descends
+adapter_saddle_pins_release,"saddle and pins at PETG density, release mass-matched",estimated from CAD + placeholder,0.205,stays on aircraft
+quiver_2112_plate,"official solid, mass kept inside the empty-weight match",already in empty weight,0.0,already in empty weight
+aircraft_empty,Dev-Kit standard configuration,manufacturer-specified,9.65,aircraft
+battery_20ah,Dev-Kit standard configuration,manufacturer-specified,7.9,aircraft
+carried_payload,sum of descending + adapter + fasteners,rollup,10.447,takeoff
+payload_allowance,25.00 - 9.65 - 7.90,manufacturer-specified,7.45,limit
+margin,allowance - carried,rollup,-2.997,limit
+takeoff,empty + battery + carried,rollup,27.997,limit
+mtow,Dev-Kit standard configuration,manufacturer-specified,25.00,limit

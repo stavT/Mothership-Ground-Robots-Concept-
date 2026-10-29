@@ -1,0 +1,181 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+      overflow: hidden;
+    }
+    #claim-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #claim-photo {
+      position: absolute;
+      width: 2040px;
+      height: 1360px;
+      left: -60px;
+      top: -72px;
+    }
+    #claim-sheet {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 2;
+    }
+    #claim-panel {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+    }
+    #claim-rule {
+      position: absolute;
+      left: 192px;
+      top: 300px;
+      width: 760px;
+      height: 4px;
+      background: var(--color-ink, #1c1e21);
+    }
+    #claim-name {
+      position: absolute;
+      left: 192px;
+      top: 220px;
+    }
+    #claim-name-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 40px;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+    #claim-num {
+      position: absolute;
+      left: 192px;
+      top: 340px;
+    }
+    #claim-num-in {
+      display: block;
+      white-space: nowrap;
+      line-height: 0.9;
+    }
+    #claim-figure {
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 188px;
+      letter-spacing: -0.03em;
+      color: var(--color-accent, #e4682e);
+    }
+    #claim-unit {
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 72px;
+      letter-spacing: -0.02em;
+      color: var(--color-ink, #1c1e21);
+      margin-left: 16px;
+    }
+    #claim-limit {
+      position: absolute;
+      left: 192px;
+      top: 560px;
+    }
+    #claim-limit-words {
+      display: block;
+      font-family: Roboto, sans-serif;
+      font-weight: 400;
+      font-size: 44px;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+    #claim-stamp {
+      position: absolute;
+      left: 192px;
+      top: 660px;
+    }
+    #claim-stamp-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+  </style>
+  <div data-hf-id="hf-dc55" id="root" data-composition-id="claim" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-myir"
+      id="claim-still"
+      class="clip"
+      data-start="0"
+      data-duration="0.9"
+      data-track-index="0"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-r03a" id="claim-stage">
+        <img data-hf-id="hf-r29f" id="claim-photo" src="assets/stills/empty.png" alt="" />
+      </div>
+    </div>
+    <div data-hf-id="hf-btku"
+      id="claim-sheet"
+      class="clip"
+      data-start="0"
+      data-duration="4.6"
+      data-track-index="1"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-zkfa" id="claim-panel">
+        <div data-hf-id="hf-y4mu" id="claim-rule"></div>
+        <div data-hf-id="hf-rwhb" id="claim-name" class="clip" data-start="0.7" data-duration="3.85" data-track-index="2">
+          <span data-hf-id="hf-e6dn" id="claim-name-words">Quiver rover pod</span>
+        </div>
+        <div data-hf-id="hf-gi1d" id="claim-num" class="clip" data-start="0.9" data-duration="3.65" data-track-index="3">
+          <span data-hf-id="hf-fotf" id="claim-num-in"><span data-hf-id="hf-5t8t" id="claim-figure">27.997</span><span data-hf-id="hf-can7" id="claim-unit">kg</span></span>
+        </div>
+        <div data-hf-id="hf-q6el" id="claim-limit" class="clip" data-start="1.6" data-duration="2.95" data-track-index="4">
+          <span data-hf-id="hf-ypos" id="claim-limit-words">Limit 25.00 kg</span>
+        </div>
+        <div data-hf-id="hf-i3sm" id="claim-stamp" class="clip" data-start="1.9" data-duration="2.65" data-track-index="5">
+          <span data-hf-id="hf-nlcr" id="claim-stamp-words">Not flight hardware</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#claim-photo", { transformOrigin: "50% 46%", x: 0, y: 0, scale: 1 }, 0);
+    tl.set("#claim-rule", { transformOrigin: "0% 50%" }, 0);
+    tl.fromTo("#claim-panel", { y: 1080 }, { y: 0, duration: 0.65, ease: "power2.inOut" }, 0.08);
+    tl.fromTo("#claim-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.28, ease: "power3.out" }, 0.78);
+    tl.fromTo(
+      "#claim-name-words",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      0.7,
+    );
+    tl.fromTo(
+      "#claim-num-in",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" },
+      0.9,
+    );
+    tl.fromTo(
+      "#claim-limit-words",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      1.6,
+    );
+    tl.fromTo(
+      "#claim-stamp-words",
+      { opacity: 0, filter: "blur(6px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      1.9,
+    );
+    window.__timelines["claim"] = tl;
+  </script>
+</template>

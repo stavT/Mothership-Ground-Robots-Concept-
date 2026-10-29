@@ -1,0 +1,82 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+      overflow: hidden;
+    }
+    #descent-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #descent-photo {
+      position: absolute;
+      width: 1860px;
+      height: 1240px;
+      left: 30px;
+      top: -70px;
+    }
+    #descent-mask {
+      position: absolute;
+      left: 700px;
+      top: 980px;
+      width: 280px;
+      height: 100px;
+      background: var(--color-ground, #f0f4f9);
+      z-index: 1;
+    }
+    #descent-line {
+      position: absolute;
+      left: 192px;
+      top: 780px;
+      z-index: 2;
+    }
+    #descent-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 72px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+  </style>
+  <div data-hf-id="hf-rm5b" id="root" data-composition-id="descent" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-jlve"
+      id="descent-shot"
+      class="clip"
+      data-start="0"
+      data-duration="4"
+      data-track-index="0"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-n7ts" id="descent-stage">
+        <img data-hf-id="hf-qv24" id="descent-photo" src="assets/stills/descent.png" alt="Pod under one open parachute" />
+      </div>
+    </div>
+    <div data-hf-id="hf-r33c" id="descent-line" class="clip" data-start="0.75" data-duration="2.6" data-track-index="1">
+      <span data-hf-id="hf-kpkk" id="descent-words">One shared chute</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#descent-photo", { transformOrigin: "50% 82%" }, 0);
+    tl.fromTo(
+      "#descent-photo",
+      { x: 0, y: 16, scale: 1.1 },
+      { x: 0, y: 0, scale: 1, duration: 0.75, ease: "power2.inOut" },
+      0,
+    );
+    tl.fromTo(
+      "#descent-words",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      0.75,
+    );
+    tl.to("#descent-words", { opacity: 0, filter: "blur(6px)", duration: 0.16, ease: "power2.in" }, 3.05);
+    window.__timelines["descent"] = tl;
+  </script>
+</template>

@@ -1,0 +1,73 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+      overflow: hidden;
+    }
+    #flight-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #flight-photo {
+      position: absolute;
+      width: 2040px;
+      height: 1360px;
+      left: -60px;
+      top: -72px;
+    }
+    #flight-line {
+      position: absolute;
+      left: 192px;
+      top: 908px;
+      z-index: 3;
+    }
+    #flight-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 64px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+  </style>
+  <div data-hf-id="hf-bxf9" id="root" data-composition-id="flight" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-h58v"
+      id="flight-shot"
+      class="clip"
+      data-start="0"
+      data-duration="3.4"
+      data-track-index="0"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-e6ia" id="flight-stage">
+        <img data-hf-id="hf-te8c" id="flight-photo" src="assets/stills/flight.png" alt="Quiver with the pod on the belly" />
+      </div>
+    </div>
+    <div data-hf-id="hf-9611" id="flight-line" class="clip" data-start="0.45" data-duration="2.35" data-track-index="1">
+      <span data-hf-id="hf-fzkh" id="flight-words">Two rovers, one belly</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#flight-photo", { transformOrigin: "50% 46%" }, 0);
+    tl.fromTo(
+      "#flight-photo",
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 8, scale: 1.04, duration: 3.05, ease: "power2.inOut" },
+      0,
+    );
+    tl.fromTo(
+      "#flight-words",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" },
+      0.45,
+    );
+    tl.to("#flight-words", { opacity: 0, filter: "blur(6px)", duration: 0.16, ease: "power2.in" }, 2.5);
+    window.__timelines["flight"] = tl;
+  </script>
+</template>

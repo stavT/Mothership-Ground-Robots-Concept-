@@ -1,0 +1,101 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      background: var(--color-ground, #f0f4f9);
+      overflow: hidden;
+    }
+    #ground-stage {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    #ground-mover {
+      position: absolute;
+      inset: 0;
+    }
+    #ground-photo {
+      position: absolute;
+      width: 1680px;
+      height: 1120px;
+      left: 120px;
+      top: -20px;
+    }
+    #ground-mask {
+      position: absolute;
+      left: 0px;
+      top: 640px;
+      width: 860px;
+      height: 440px;
+      background: var(--color-ground, #f0f4f9);
+      z-index: 2;
+    }
+    #ground-dip {
+      position: absolute;
+      inset: 0;
+      background: #1c1e21;
+      opacity: 0;
+      z-index: 2;
+    }
+    #ground-line {
+      position: absolute;
+      left: 192px;
+      top: 128px;
+      z-index: 3;
+    }
+    #ground-words {
+      display: block;
+      font-family: Oswald, sans-serif;
+      font-weight: 600;
+      font-size: 72px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--color-ink, #1c1e21);
+      white-space: nowrap;
+    }
+  </style>
+  <div data-hf-id="hf-6s8w" id="root" data-composition-id="ground" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-kgbl"
+      id="ground-shot"
+      class="clip"
+      data-start="0"
+      data-duration="4.6"
+      data-track-index="0"
+      data-layout-allow-overflow
+    >
+      <div data-hf-id="hf-jhw9" id="ground-stage">
+        <div data-hf-id="hf-865o" id="ground-mover">
+          <img data-hf-id="hf-2qgv"
+            id="ground-photo"
+            src="assets/stills/ground.png"
+            alt="Ramp down and both rovers ahead of the pod"
+          />
+        </div>
+        <div data-hf-id="hf-43ow" id="ground-dip"></div>
+      </div>
+    </div>
+    <div data-hf-id="hf-u0jc" id="ground-line" class="clip" data-start="0.85" data-duration="3.1" data-track-index="1">
+      <span data-hf-id="hf-d2xg" id="ground-words">Both drive out</span>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#ground-mover", { transformOrigin: "62% 58%" }, 0);
+    tl.fromTo(
+      "#ground-mover",
+      { x: 30, y: 0, scale: 1 },
+      { x: -36, y: -8, scale: 1.06, duration: 1.2, ease: "power2.inOut" },
+      0.4,
+    );
+    tl.fromTo("#ground-dip", { opacity: 0 }, { opacity: 0.4, duration: 0.1, ease: "none" }, 4.48);
+    tl.fromTo(
+      "#ground-words",
+      { opacity: 0, filter: "blur(8px)" },
+      { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power4.out" },
+      0.85,
+    );
+    tl.to("#ground-words", { opacity: 0, filter: "blur(6px)", duration: 0.16, ease: "power2.in" }, 3.65);
+    window.__timelines["ground"] = tl;
+  </script>
+</template>
