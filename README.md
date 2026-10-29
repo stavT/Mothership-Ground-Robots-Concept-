@@ -4,9 +4,9 @@ One [Project Quiver](https://github.com/Arrow-air/project-quiver) carrier. One p
 
 This is a packaging study. It is not flight hardware.
 
-[**Play the 27-second demo**](quiver-pod-drop/render/quiver-drop.mp4)
+![Demo](quiver-pod-drop/render/quiver-drop.gif)
 
-[![Quiver carrying the closed pod](quiver-rover-pod/previews/flight_iso.png)](quiver-pod-drop/render/quiver-drop.mp4)
+[Full video](quiver-pod-drop/render/quiver-drop.mp4)
 
 The film runs release, packed separation, parachute descent, ramp down, and the two rovers ahead of the pod. The end card is the mass result below.
 
